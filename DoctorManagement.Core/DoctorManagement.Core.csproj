@@ -7,7 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="CQRS\" />
+    <Folder Include="CQRS\Queries\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="11.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DoctorManagement.Models\DoctorManagement.Models.csproj" />
+    <ProjectReference Include="..\DoctorManagement.Services\DoctorManagement.Services.csproj" />
   </ItemGroup>
 
 </Project>

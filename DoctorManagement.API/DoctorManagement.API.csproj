@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="11.1.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.16">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -15,11 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\DoctorManagement.Core\DoctorManagement.Core.csproj" />
     <ProjectReference Include="..\DoctorManagement.Infrastructure\DoctorManagement.Infrastructure.csproj" />
+    <ProjectReference Include="..\DoctorManagement.Models\DoctorManagement.Models.csproj" />
   </ItemGroup>
 
 </Project>
