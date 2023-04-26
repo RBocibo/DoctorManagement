@@ -9,6 +9,7 @@ namespace DoctorManagement.Models.AutoMapper
         public AutoMapper() 
         {
             CreateMap<Patient, PatientDTO>().ReverseMap();
+            CreateMap<Patient, UpdatePatientDTO>().ReverseMap();
         }
     }
 }

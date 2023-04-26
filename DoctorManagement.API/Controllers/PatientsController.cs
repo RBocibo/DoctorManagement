@@ -1,4 +1,5 @@
 ﻿using DoctorManagement.Core.CQRS.Commands.AddPatientCommands;
+using DoctorManagement.Core.CQRS.Commands.UpdatePatientCommands;
 using DoctorManagement.Models.DTOs;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -19,6 +20,15 @@ namespace DoctorManagement.API.Controllers
         {
             var command = new AddPatientCommand(patientDTO);
             var response = await _mediator.Send(command);
+            return Ok(response);
+        }
+
+        [HttpPut("{patientId}")]
+        public async Task<ActionResult> UpdatePatient(int patientId, UpdatePatientDTO patientDTO)
+        {
+            var command = new UpdatePatientCommand(patientId, patientDTO);
+            var response = await _mediator.Send(command);
+
             return Ok(response);
         }
     }

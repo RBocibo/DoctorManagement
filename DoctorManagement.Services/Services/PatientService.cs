@@ -33,5 +33,25 @@ namespace DoctorManagement.Services.Services
             var mappedPatient = _mapper.Map<PatientDTO>(addPatient);
             return mappedPatient;
         }
+
+        public async Task<UpdatePatientDTO> UpdatePatientAsync(int patientId, UpdatePatientDTO patientDTO)
+        {
+            var patient = await _patientRepository.GetByIsAsync(x => x.PatientId == patientId);
+
+            if (patient == null)
+            {
+                return null;
+            }
+
+            patient.FirstName = patientDTO.FirstName != null ? patientDTO.FirstName : patient.FirstName;
+            patient.LastName = patientDTO.LastName != null ? patientDTO.LastName : patient.LastName;
+            patient.PhoneNumber = patientDTO.PhoneNumber != null ? patientDTO.PhoneNumber : patient.PhoneNumber;
+            patient.Email = patientDTO.Email != null ? patientDTO.Email : patient.Email;
+
+            await _patientRepository.UpdateAsync(patient);
+
+            var mapped = _mapper.Map<UpdatePatientDTO>(patient);
+            return mapped;
+        }
     }
 }
