@@ -17,8 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DoctorManagement.Domain\DoctorManagement.Domain.csproj" />
-    <ProjectReference Include="..\DoctorManagement.Models\DoctorManagement.Models.csproj" />
+    <ProjectReference Include="..\DoctorManagement.Core\DoctorManagement.Core.csproj" />
     <ProjectReference Include="..\DoctorManagement.Services\DoctorManagement.Services.csproj" />
   </ItemGroup>
 

@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorManagement.ServiceTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorManagement.APITests", "DoctorManagement.APITests\DoctorManagement.APITests.csproj", "{AB13E950-0277-432A-A935-30B638675BA7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorManagement.CoreTests", "DoctorManagement.CoreTests\DoctorManagement.CoreTests.csproj", "{DC779A1B-5E73-4F54-B8C3-3BDB29D2CC2A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{AB13E950-0277-432A-A935-30B638675BA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB13E950-0277-432A-A935-30B638675BA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB13E950-0277-432A-A935-30B638675BA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC779A1B-5E73-4F54-B8C3-3BDB29D2CC2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC779A1B-5E73-4F54-B8C3-3BDB29D2CC2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC779A1B-5E73-4F54-B8C3-3BDB29D2CC2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC779A1B-5E73-4F54-B8C3-3BDB29D2CC2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -77,6 +83,7 @@ Global
 		{1157AE15-E94D-43B3-8D35-8A4A9D0FC359} = {4F82DF1F-9323-4DBB-8E6E-57A681339CD1}
 		{1341814F-6344-4AEB-B1AD-463E6FC7D161} = {E08F8956-4F31-4678-A2D4-D2EA52020D43}
 		{AB13E950-0277-432A-A935-30B638675BA7} = {E08F8956-4F31-4678-A2D4-D2EA52020D43}
+		{DC779A1B-5E73-4F54-B8C3-3BDB29D2CC2A} = {E08F8956-4F31-4678-A2D4-D2EA52020D43}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {36DA026F-D691-4499-955D-C756D55EF80C}
