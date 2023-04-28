@@ -6,5 +6,6 @@ namespace DoctorManagement.Services.Interfaces
     {
         Task<IEnumerable<AppointmentDTO>> ListAppointmentAsync();
         Task<AddAppointmentDTO> AddAppointmentAsync(AddAppointmentDTO addAppointmentDTO);
+        Task<AppointmentDTO> GetAppointmentByIdAsync(int appointmentId);
     }
 }

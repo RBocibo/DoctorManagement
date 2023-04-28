@@ -1,5 +1,6 @@
 ﻿using DoctorManagement.Core.CQRS.Commands.AddAppointmentCommandHandlers;
 using DoctorManagement.Core.CQRS.Queries.GetAllAppointmentsQueryHandlers;
+using DoctorManagement.Core.CQRS.Queries.GetAppointmentByIdHandlers;
 using DoctorManagement.Models.DTOs;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -31,6 +32,15 @@ namespace DoctorManagement.API.Controllers
         {
             var command = new AddAppointmentCommand(addAppointment);
             var response = await _mediator.Send(command);
+
+            return Ok(response);
+        }
+
+        [HttpGet("{appointmentId}")]
+        public async Task<ActionResult> GetAppointmentById(int appointmentId)
+        {
+            var query = new GetAppointmentByIdQuery(appointmentId);
+            var response = await _mediator.Send(query);
 
             return Ok(response);
         }
