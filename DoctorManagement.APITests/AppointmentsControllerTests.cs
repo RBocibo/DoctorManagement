@@ -1,5 +1,6 @@
 ﻿using DoctorManagement.API.Controllers;
 using DoctorManagement.Core.CQRS.Queries.GetAllAppointmentsQueryHandlers;
+using DoctorManagement.Core.CQRS.Queries.GetAppointmentByIdHandlers;
 using DoctorManagement.Domain.Entities.Enums;
 using DoctorManagement.Models.DTOs;
 using MediatR;
@@ -57,6 +58,34 @@ namespace DoctorManagement.APITests
             Assert.NotNull(resultValue);
             //Assert.IsType<OkObjectResult>(resultValue);
             Assert.Equal(resultValue, appointmentDTOs);
+        }
+
+        [Fact]
+        public async Task GetAppointmentById_Returns_Success()
+        {
+            AppointmentDTO appointmentDTO = new AppointmentDTO()
+            {
+                AppointmentId = 1,
+                StartTime = DateTime.UtcNow,
+                AppointmentStatus = AppointmentStatus.Active,
+                OfficeId = 1,
+                PatientId= 1,
+            };
+
+            //Arrange
+            _mockMediator.Setup(x => x.Send(It.IsAny<GetAppointmentByIdQuery>(), CancellationToken.None))
+                .Returns(Task.FromResult(appointmentDTO));
+
+            var controller = new AppointmentsController(_mockMediator.Object);
+
+            //Act
+            var constrollerResponse = controller.GetAppointmentById(appointmentDTO.AppointmentId);
+            var result = constrollerResponse.Result as OkObjectResult;
+
+            //Assert
+            Assert.NotNull(result);
+            Assert.IsAssignableFrom<AppointmentDTO>(result.Value);
+            Assert.Equal(result.Value, appointmentDTO);
         }
     }
 }
