@@ -11,6 +11,7 @@ namespace DoctorManagement.API.Extensions
         {
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IPatientRepository, PatientRepository>();
+            services.AddTransient<IAppointmentRepository, AppointmentRepository>();
         }
     }
 }

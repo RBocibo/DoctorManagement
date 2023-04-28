@@ -7,7 +7,7 @@ using DoctorManagement.Services.Interfaces;
 
 namespace DoctorManagement.Services.Services
 {
-    public class PatientService : BaseRepository, IPatientService
+    public class PatientService : BaseService, IPatientService
     {
         private readonly IPatientRepository _patientRepository;
 
