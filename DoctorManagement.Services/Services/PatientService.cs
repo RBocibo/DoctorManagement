@@ -27,10 +27,10 @@ namespace DoctorManagement.Services.Services
                 Email = patientDTO.Email,
             };
 
-            await _patientRepository.CreateAsync(addPatient);
+            var savedPatient = await _patientRepository.CreateAsync(addPatient);
             await _unitOfWork.CommitAsync();
 
-            var mappedPatient = _mapper.Map<PatientDTO>(addPatient);
+            var mappedPatient = _mapper.Map<PatientDTO>(savedPatient);
             return mappedPatient;
         }
 

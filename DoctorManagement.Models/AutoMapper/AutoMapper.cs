@@ -10,6 +10,8 @@ namespace DoctorManagement.Models.AutoMapper
         {
             CreateMap<Patient, PatientDTO>().ReverseMap();
             CreateMap<Patient, UpdatePatientDTO>().ReverseMap();
+            CreateMap<Appointment, AddAppointmentDTO>().ReverseMap();
+            CreateMap<Appointment, AppointmentDTO>().ReverseMap();
         }
     }
 }

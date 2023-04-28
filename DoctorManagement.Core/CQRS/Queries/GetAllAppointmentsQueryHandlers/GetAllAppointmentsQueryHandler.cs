@@ -6,9 +6,9 @@ namespace DoctorManagement.Core.CQRS.Queries.GetAllAppointmentsQueryHandlers
 {
     public class GetAllAppointmentsQueryHandler : IRequestHandler<GetAllAppointmentsQuery, IEnumerable<AppointmentDTO>>
     {
-        private readonly IDoctorService _doctorService;
+        private readonly IAppointmentService _doctorService;
 
-        public GetAllAppointmentsQueryHandler(IDoctorService doctorService)
+        public GetAllAppointmentsQueryHandler(IAppointmentService doctorService)
         {
             _doctorService = doctorService;
         }

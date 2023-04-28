@@ -25,9 +25,6 @@ namespace DoctorManagement.ServiceTests
         [Fact]
         public async Task AddPatient_Returns_Success()
         {
-
-
-            //Arrange
             Patient patient = new Patient()
             {
                 PatientId = 1,
@@ -46,6 +43,7 @@ namespace DoctorManagement.ServiceTests
                 Email = "email@gmail.com"
             };
 
+            //Arrange
             _patientRepository.Setup(x => x.CreateAsync(It.IsAny<Patient>()))
                 .Returns(Task.FromResult(patient));
             _mapper.Setup(x => x.Map<PatientDTO>(It.Is<Patient>(m => m.Equals(patient))))
@@ -55,9 +53,10 @@ namespace DoctorManagement.ServiceTests
 
             //Act
             var serviceResponse = patientService.AddPatient(patientDTO);
+            var result = serviceResponse.Result as PatientDTO;
 
             //Assert
-            Assert.NotNull(serviceResponse);
+            Assert.NotNull(result);
             Assert.Equal(patient.FirstName, patientDTO.FirstName);
             Assert.Equal(patient.LastName, patientDTO.LastName);
             Assert.Equal(patient.Email, patientDTO.Email);

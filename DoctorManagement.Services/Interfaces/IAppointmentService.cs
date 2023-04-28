@@ -2,8 +2,9 @@
 
 namespace DoctorManagement.Services.Interfaces
 {
-    public interface IDoctorService
+    public interface IAppointmentService
     {
         Task<IEnumerable<AppointmentDTO>> ListAppointmentAsync();
+        Task<AddAppointmentDTO> AddAppointmentAsync(AddAppointmentDTO addAppointmentDTO);
     }
 }

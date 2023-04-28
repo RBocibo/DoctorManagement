@@ -8,7 +8,7 @@ namespace DoctorManagement.API.Extensions
         public static void RegisterServices(this IServiceCollection services)
         {
             services.AddTransient<IPatientService, PatientService>();
-            services.AddTransient<IDoctorService, DoctorService>();
+            services.AddTransient<IAppointmentService, AppointmentService>();
         }
     }
 }
