@@ -33,9 +33,8 @@ namespace DoctorManagement.Infrastructure.Repositories
 
         public async Task<List<TEntity>> FindByListAsync(Expression<Func<TEntity, bool>> expression)
         {
-            var entities = _dbSet.Where(expression).ToList();
+            var entities = await _dbSet.Where(expression).ToListAsync();
             return entities;
-
         }
 
         public async Task<IEnumerable<TEntity>> GetAllAsync()

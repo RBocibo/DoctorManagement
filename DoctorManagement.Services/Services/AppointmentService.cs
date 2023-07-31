@@ -46,6 +46,14 @@ namespace DoctorManagement.Services.Services
             return mappedAppointment;
         }
 
+        public async Task<IEnumerable<AppointmentDTO>> ListActiveAppointmentsAsync(int status)
+        {
+            var appointments = await _appointmentRepository.FindByListAsync(x => (int)x.AppointmentStatus == status);
+
+            var mapped = _mapper.Map<IEnumerable<AppointmentDTO>>(appointments);
+            return mapped;
+        }
+
         public async Task<IEnumerable<AppointmentDTO>> ListAppointmentAsync()
         {
             var listAppointments = await _appointmentRepository.GetAllAsync();
